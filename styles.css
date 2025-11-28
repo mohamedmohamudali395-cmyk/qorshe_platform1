@@ -47,14 +47,12 @@ a:hover {
     color: white;
     padding: 20px 0;
     margin-bottom: 30px;
-    
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .brand {
@@ -71,6 +69,8 @@ a:hover {
 
 .site-header h1 {
     font-size: 1.8em;
+    color: white; /* Waxaa lagu daray si uu ugu muuqdo background-ka Buluuga ah */
+    margin: 0; /* Xaqiiji in margin uusan xagga sare lahayn */
 }
 
 nav a {
@@ -140,6 +140,22 @@ h2, h3 {
     margin-top: 10px;
 }
 
+/* --- HERO SECTION (Home Page) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 40px;
+}
+.hero img {
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    object-fit: cover;
+    min-width: 150px;
+}
+
+
 /* ------------------------------------ */
 /* 5. Author Profile (about.html) */
 /* ------------------------------------ */
@@ -147,10 +163,10 @@ h2, h3 {
     display: flex;
     gap: 20px;
     align-items: center;
-    padding: 20px;
-    border: 1px solid #eee;
+    padding: 25px; /* Waxaa laga beddelay 20px oo aad keentay */
+    border: 1px solid #ddd; /* Waxaa lagu daray border si uu u kala duwanaado */
     border-radius: 8px;
-    background-color: #fafafa;
+    background-color: var(--light-bg); /* Isticmaalaya background khafiif ah #f8f8f8 */
 }
 
 .author img {
@@ -167,12 +183,14 @@ h2, h3 {
     padding: 60px 0;
     text-align: center;
     margin-bottom: 30px;
+    margin-top: -30px; /* Si uu u la qabsado content-card ka sareeya */
 }
 
 #blog-stats h2 {
     color: white;
     border-bottom-color: var(--secondary-color);
     margin-bottom: 40px;
+    padding-bottom: 5px; /* Xaqiiji padding hoose */
 }
 
 .stats-grid {
@@ -200,18 +218,17 @@ h2, h3 {
     opacity: 0.9;
 }
 
-
 /* ------------------------------------ */
-/* 7. Forms (contact.html) - Muhiim u ah naqshada aad rabto */
+/* 7. Forms (contact.html) */
 /* ------------------------------------ */
 
 .auth-form-style {
-    max-width: 450px; /* Cabbir dhexdhexaad ah */
-    margin: 0 auto; /* Dhexdhexaad u keen bogga */
+    max-width: 450px;
+    margin: 0 auto;
     padding: 30px;
     background: var(--card-bg);
-    border-radius: 10px; /* Badhamada oo wareegsan */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Hadh yar */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -247,11 +264,12 @@ textarea {
 
 /* Badhamada waaweyn ee Orange-ka ah */
 .btn-primary {
+    display: block; /* Waxaa lagu daray si uu u helo margin/width sax ah */
     width: 100%;
     padding: 12px;
     border: none;
     border-radius: 5px;
-    background-color: var(--secondary-color); /* Orange/Liin */
+    background-color: var(--secondary-color);
     color: white;
     font-size: 1.1em;
     font-weight: bold;
@@ -261,7 +279,7 @@ textarea {
 }
 
 .btn-primary:hover {
-    background-color: #e67e22; /* Hoos u dhig midabka yar */
+    background-color: #e67e22;
 }
 
 /* ------------------------------------ */
@@ -286,10 +304,9 @@ textarea {
     background-color: #ccc;
 }
 .tab-button.active {
-    background-color: var(--primary-color); /* Buluug Madow */
+    background-color: var(--primary-color);
     color: white;
 }
-/* Kani wuxuu qariyaa dhammaan Tab-yada ilaa JavaScript-ku muujiyo mid */
 .tab-content {
     display: none;
 }
@@ -303,87 +320,78 @@ textarea {
     margin-top: 40px;
     border-top: 1px solid #ddd;
     color: #777;
-    
-    background-color: white;
-    /* Koodhkan ku dar dhammaadka faylkaaga styles.css */
-
-/* ------------------------------------ */
-/* Qalajinta Muuqaalka About Page (Si uu u kala duwanaado Home Page) */
-/* ------------------------------------ */
-.author {
-    /* Waxaan u beddelnay midabka background-ka mid khafiif ah */
-    background-color: var(--light-bg); /* Isticmaalaya midabka guud ee khafiifka ah #f8f8f8 */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 25px;
-}
-
-/* Koodhka Hero Section wuxuu ahaanayaa kan Home Page kaliya */
-.hero {
-    background-color: white; /* U daa midabka cad (white) */
+    background-color: white;
 }
 
 
 /* --- BILOWGA MOBILE RESPONSIVENESS (Media Query) --- */
 
 @media (max-width: 768px) {
-    /* 1. Navigation-ka Sare (Home, About, Contact) */
+    /* 1. Navigation-ka Sare (Xalinta isku dhaca) */
     .site-header .container {
-        /* Ka dhig navigation-ka mid buuxa oo hoos ugu dhaca marka loo baahdo */
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     .site-header .brand {
-        margin-bottom: 10px; /* Ka yaree booska u dhaxeeya Qorshe iyo Home/About/Contact */
+        margin-bottom: 10px;
     }
 
     .site-header nav {
         margin-top: 10px;
         width: 100%;
-        display: flex; /* Ka dhig Home/About/Contact mid isku xiga */
-        justify-content: space-around; /* Kala fogaan siman */
+        display: flex;
+        justify-content: space-around;
     }
 
     .site-header nav a {
-        padding: 5px 10px; /* Ka yaree padding-ka navigation-ka */
-        font-size: 0.9em; /* Ka yaree qoraalka */
+        padding: 5px 10px;
+        font-size: 0.9em;
     }
-
-    /* 2. Qoraallada Blog-ga (Bogga Home-ka) */
+    
+    /* 2. HERO Section (Home Page) */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    /* 3. Blog Grid */
     .blog-grid {
-        /* Ka dhig qoraallada mid kasta oo keligiis ah, ma aha grid */
         grid-template-columns: 1fr; 
-        gap: 30px; /* Ka dhig boos macquul ah */
+        gap: 30px;
     }
 
-    .blog-post img {
-        height: auto; /* Hubi in sawirka uu si fiican u ballaaranayo */
-        max-height: 250px;
+    /* 4. ABOUT PAGE (Xalinta isku dhaca sawirka iyo qoraalka) */
+    .author {
+        flex-direction: column; /* Sawirka kor, qoraalka hoos */
+        text-align: center;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .stats-grid {
+        flex-direction: column; /* Stats-ka isku xiga */
+        gap: 15px;
+        padding: 0 15px;
     }
 
-    /* 3. Foomamka Contact-ka */
-    #auth-form .content-card {
-        padding: 20px; /* Ka yaree padding-ka foomka */
-    }
-
+    /* 5. Foomamka Contact-ka */
     .tab-buttons {
-        flex-wrap: wrap; /* Ka dhig badhamada kuwo hoos ugu dhaca haddii ay yaraato shaashaddu */
+        flex-wrap: wrap; 
     }
 
     .tab-button {
         flex-grow: 1;
         margin: 5px;
     }
-
-    /* 4. Footer-ka (Haddii loo baahdo) */
+    
+    /* 6. Footer-ka */
     .site-footer {
         padding: 20px 10px;
         font-size: 0.9em;
     }
 }
 
-/* --- DHAMMAADKA MOBILE RESPONSIVENESS (Media Query) --- */
-
-}
+/* --- DHAMMAADKA MOBILE RESPONSIVENESS --- */
