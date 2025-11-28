@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="so">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qorshe — Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* CSS Fudud oo loogu talagalay Tab-yada - Waa iska sidii hore */
+    .tab-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .tab-button {
+        padding: 12px 25px;
+        margin: 0 5px;
+        border: none;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+    .tab-button:hover {
+        background-color: #e0e0e0;
+    }
+    .tab-button.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    .tab-content {
+        display: none;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    /* Qaabeynta Foomamka - Waa iska sidii hore */
+    .auth-form-style label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .auth-form-style input[type="text"],
+    .auth-form-style input[type="email"],
+    .auth-form-style input[type="tel"],
+    .auth-form-style input[type="password"],
+    .auth-form-style textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .auth-form-style textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    .auth-form-style button {
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">Q</div>
+        <h1>Qorshe</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="auth-form" class="content-card" style="padding: 40px 0;">
+      
+      <div class="tab-buttons">
+          <button class="tab-button active" onclick="showTab('contact', this)">Nala Soo Xariir</button>
+          <button class="tab-button" onclick="showTab('register', this)">Isdiiwaangeli</button>
+          <button class="tab-button" onclick="showTab('login', this)">Soo Gal</button>
+      </div>
+
+      <div id="contact-tab" class="tab-content" style="display: block;">
+          <form id="contactForm" class="auth-form-style">
+              <h3 style="text-align: center;">Nala Soo Xariir</h3>
+              <p style="text-align: center; margin-bottom: 20px;">Buuxi foomka hoose si aad noogu soo dirto fariin.</p>
+              
+              <label for="name">Magaca:</label>
+              <input type="text" id="name" required>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" required>
+
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" required>
+
+              <label for="message">Fariin:</label>
+              <textarea id="message" required></textarea>
+
+              <button type="button" id="sendBtn" class="btn-primary" style="width: 100%;">Dir Fariinta</button>
+              <p id="status" class="meta" style="text-align: center; margin-top: 15px;"></p>
+          </form>
+      </div>
+
+      <div id="register-tab" class="tab-content">
+          <form id="register-form" class="auth-form-style">
+              <h3 style="text-align: center;">Isdiiwaangeli</h3>
+              <p style="text-align: center; margin-bottom: 20px;">Ku soo biir qoyska Qorshe oo hel qoraallo cusub email-kaaga.</p>
+              
+              <label for="full_name">Magaca Seddexan:</label>
+              <input type="text" id="full_name" name="full_name" required>
+
+              <label for="reg_phone">Lambarka Taleefanka:</label>
+              <input type="tel" id="reg_phone" name="phone" required>
+
+              <label for="reg_email">E-mailkaaga (Username):</label>
+              <input type="email" id="reg_email" name="reg_email" required>
+
+              <label for="reg_password">Password:</label>
+              <input type="password" id="reg_password" name="reg_password" required>
+
+              <button type="submit" class="btn-primary" style="width: 100%;">Isdiiwaangeli Hadda</button>
+              
+              <p style="text-align: center; margin-top: 10px;">Haddii aad diiwaangashan tahay, 
+                <a href="#" onclick="showTab('login', document.querySelector('.tab-buttons .tab-button:nth-child(3)'))">Halkan ku Gal (Login)</a>
+              </p>
+          </form>
+      </div>
+
+      <div id="login-tab" class="tab-content">
+          <form id="login-form" class="auth-form-style">
+              <h3 style="text-align: center;">Soo Gal (Login)</h3>
+              <p style="text-align: center; margin-bottom: 20px;">Soo gal si aad u aragto astaamaha gaarka ah.</p>
+              
+              <label for="login_username">Username (E-mail):</label>
+              <input type="text" id="login_username" name="login_username" required>
+
+              <label for="login_password">Password:</label>
+              <input type="password" id="login_password" name="login_password" required>
+
+              <button type="submit" class="btn-primary" style="width: 100%;">Soo Gal</button>
+              
+              <p style="text-align: center; margin-top: 10px;">Ma cusub tahay? 
+                <a href="#" onclick="showTab('register', document.querySelector('.tab-buttons .tab-button:nth-child(2)'))">Halkan ku Isdiiwaangeli</a>
+              </p>
+          </form>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Qorshe — Dhamaan xuquuqdu way xirantahay</p>
+  </footer>
+
+<script>
+    // Funtion-kan wuxuu maamulaa kala beddelka Tab-yada (Contact, Register, Login)
+    function showTab(tabName, button) {
+        // Qari dhammaan contents-ka
+        var contents = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none';
+        }
+
+        // Ka saar 'active' dhammaan badhamada
+        var buttons = document.getElementsByClassName('tab-button');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('active');
+        }
+
+        // Soo bandhig content-ga la doortay
+        document.getElementById(tabName + '-tab').style.display = 'block';
+        
+        // Badhanka muuji 'active'
+        if (button) {
+            button.classList.add('active');
+        } else {
+            // Xalka haddii function-ka la waco la'aan badhan (Sida markii ugu horraysay)
+            var initialButton = document.querySelector(tab-buttons .tab-button[onclick*="'${tabName}'"]);
+            if (initialButton) {
+                initialButton.classList.add('active');
+            }
+        }
+    }
+
+    // Dejinta tabka hore ee muuqda (Marka bogga la furo)
+    document.addEventListener('DOMContentLoaded', function() {
+        showTab('contact');
+    });
+
+    // Koodhka JavaScript ee Maamula Foomka Nala Soo Xariir (Contact Form)
+    document.getElementById('sendBtn').addEventListener('click', function() {
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var message = document.getElementById('message').value.trim();
+        var status = document.getElementById('status');
+        
+        if (!name || !email || !phone || !message) {
+            status.textContent = 'Fadlan buuxi dhammaan xogaha loo baahan yahay.';
+            status.style.color = 'red';
+            return;
+        }
+        
+        var subject = encodeURIComponent('Xariir Cusub oo ka yimid ' + name + ' (Qorshe)');
+        var body = encodeURIComponent('Magaca: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nFariin:\n' + message);
+        var recipient = 'mohamedmohamudali395@gmail.com'; 
+        
+        // Fur email app-ka isticmaalaha
+        window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+        
+        // Muuji farriin guul ah
+        status.textContent = 'Fariintaada waa diyaar. Fadlan dir email app-kaaga.';
+        status.style.color = 'green';
+        // Dib u celi foomka
+        document.getElementById('contactForm').reset();
+    });
+
+    // Koodhka sanadka ee foot-ka
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+  
+</body>
+</html>
